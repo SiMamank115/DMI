@@ -1,368 +1,749 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DMI</title>
+        <link rel="stylesheet" href="assets/css/mdb.min.css" />
+        <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link
+            rel="shortcut icon"
+            href="./assets/img/cube-solid.svg"
+            type="image/x-icon"
+        />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DMI</title>
-    <link rel="stylesheet" href="assets/css/mdb.min.css">
-    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="shortcut icon" href="./assets/img/cube-solid.svg" type="image/x-icon">
-</head>
-
-<body>
-    <!-- loading -->
-    <div
-        class="slide slide-0 slide-show loading-screen flex-wrap flex-column justify-content-center align-items-center">
-        <div class="col-12 text-center h2 pb-4">Loading</div>
-        <div class="col-6">
-            <div class="progress" style="height: 10px">
-                <div class="progress-bar bg-warning loading-bar progress-bar-striped progress-bar-animated"
-                    role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
-            </div>
-        </div>
-    </div>
-    <!-- slide -->
-    <div class="slide slide-1 blob justify-content-center align-items-center flex-wrap flex-column bg-light">
-        <div class="col-12 h1 text-center poppins text-dark" style="font-weight: 500;">Selamat datang di</div>
-        <div class="col-12 h1 text-center poppins text-navy" style="font-weight:700;">Media Pembelajaran Interaktif
-        </div>
-        <button type="button" class="btn btn-lg btn-warning mt-3" onclick="changeSlide(slides[2])">Mulai</button>
-    </div>
-    <!-- intro -->
-    <div class="slide slide-2 justify-content-center align-items-center">
-        <img src="./assets/img/menu.svg" class="menu-img col-3" alt="">
-        <div class="fs-5 col-3 text-box-menu p-2 bg-light">Selamat datang ! hover untuk melihat deskripsi !</div>
-        <div class="fs-5 col-3 text-box-menu p-2 bg-light d-none opacity-0">Bagian Pendahuluan berisi semua tentang hal
-            hal yang perlu diketahui terlebihh dahulu mencakup KDKI, Indikator, Tujuan, Peta kompetensi, dan Profil !!
-        </div>
-        <div class="fs-5 col-3 text-box-menu p-2 bg-light d-none opacity-0">Bagian Materi berisi semua tentang materi
-            yang diperlukan pengguna untuk bisa mengerjakan evaluasi dengan mudah, terdapat 2 materi didalam nya.</div>
-        <div class="fs-5 col-3 text-box-menu p-2 bg-light d-none opacity-0">bagian 3</div>
-        <div class="col-3 d-flex flex-wrap flex-column align-items-stretch">
-            <div class="col-12 d-flex justify-content-center mb-3">
-                <div onclick="changeSlide(slides[3])" onmouseover="changeTextBoxMenu(1)"
-                    class="col-6 btn btn-lg btn-light button-menu py-3" data-mdb-ripple-color="warning" id="menu1">
-                    Pendahuluan
-                </div>
-            </div>
-            <div class="col-12 d-flex justify-content-center mb-3">
-                <div onclick="changeSlide(slides[9])" onmouseover="changeTextBoxMenu(2)"
-                    class="col-6 btn btn-lg btn-light button-menu py-3" data-mdb-ripple-color="warning" id="menu2">
-                    Materi
-                </div>
-            </div>
-            <div class="col-12 d-flex justify-content-center mb-3">
-                <div onmouseover="changeTextBoxMenu(3)" class="col-6 btn btn-lg btn-light button-menu py-3"
-                    data-mdb-ripple-color="warning" id="menu3">
-                    Evaluasi
+    <body>
+        <!-- loading -->
+        <div
+            class="slide slide-0 slide-show loading-screen flex-wrap flex-column justify-content-center align-items-center"
+        >
+            <div class="col-12 text-center h2 pb-4">Loading</div>
+            <div class="col-6">
+                <div class="progress" style="height: 10px">
+                    <div
+                        class="progress-bar bg-warning loading-bar progress-bar-striped progress-bar-animated"
+                        role="progressbar"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="width: 0%"
+                    ></div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- (( pendahuluan )) -->
-    <div class="slide slide-3 justify-content-between align-items-center flex-column">
-        <button onclick="changeSlide(slides[2])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:64px;">
-            <i class="fa-solid fa-arrow-left-long me-1"></i> Back
-        </button>
-        <div class="col-6 d-flex justify-content-between flex-wrap align-items-stretch mb-3 flex-wrap pt-5 mt-5">
-            <div style="width: 30%;" onclick="changeSlide(slides[4])"
-                class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
-                data-mdb-ripple-color="warning">KDKI</div>
-            <div style="width: 30%;" onclick="changeSlide(slides[5])"
-                class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
-                data-mdb-ripple-color="warning">Indikator</div>
-            <div style="width: 30%;" onclick="changeSlide(slides[6])"
-                class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
-                data-mdb-ripple-color="warning">Tujuan</div>
-            <div style="width: 47.5%;" onclick="changeSlide(slides[7])"
-                class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center mt-4"
-                data-mdb-ripple-color="warning">Peta Kompetensi</div>
-            <div style="width: 47.5%;" onclick="changeSlide(slides[8])"
-                class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center mt-4"
-                data-mdb-ripple-color="warning">Profil</div>
-        </div>
-        <div class="col-6 bg-light h-50 border-dark border-2 p-4 fs-5"
-            style="border-radius: .3rem; border-style: dashed !important;">Mulai dari KDKI berisi tentang hal hal yang
-            akan ada pada materi, lalu dilanjutkan dengan Indikator berisi tentang hal hal yang harus dicapai siswa saat
-            selesai menyelesaikan pembelajaran, lalu tujuan berisi hal hal yang menjadi tujuan dibuat nya media ini,
-            peta kompetensi berisikan peta media ini, dan terakhir profil berisi pengembang yang berpartisipasi
-            mengembangkan media ini hingga selesai.</div>
-    </div>
-    <!-- [ kdki ] -->
-    <div class="slide slide-4 p-5">
-        <button onclick="changeSlide(slides[3])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:64px;">
-            <i class="fa-solid fa-arrow-left-long me-1"></i> Back
-        </button>
-        <button onclick="changeSlide(slides[2])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:180px;">
-            <i class="fa-solid fa-house"></i> Home
-        </button>
-        <div class="w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap
-        " style="border-radius: .3rem; border-style: dashed !important;">
-            <div class="h1 mb-5">KDKI:</div>
-            <div style="height: max-content;" class="col-12 mb-3">3.12 Menerapkan pengoperasian kamera digital dan
-                perawatan peralatan fotografi.</div>
-            <div style="height: max-content;" class="col-12 mb-3">4.12 Mengoperasikan kamera digital dan perawatan
-                fotografi.</div>
-            <div style="height: max-content;" class="col-12 mb-3">KI-3 (Pengetahuan) : Memahami, menerapkan,
-                menganalisis, dan mengevaluasi tentang pengetahuan faktual, konseptual, operasional dasar, dan
-                metakognitif sesuai dengan bidang dan lingkup Simulasi dan Komunikasi Digital (Simdig) pada tingkat
-                teknis, spesifik, detil, dan kompleks, berkenaan dengan ilmu pengetahuan, teknologi, seni, budaya, dan
-                humaniora dalam konteks pengembangan potensi diri sebagai bagian dari keluarga, sekolah, dunia kerja,
-                warga masyarakat nasional, regional, dan internasional. </div>
-            <div style="height: max-content;" class="col-12 mb-3">KI-4 (Keterampilan) : Melaksanakan tugas spesifik
-                dengan menggunakan alat, informasi, dan prosedur kerja yang lazim dilakukan serta memecahkan masalah
-                sesuai dengan lingkup Simulasi dan Komunikasi Digital (Simdig). Menampilkan kinerja di bawah bimbingan
-                dengan mutu dan kuantitas yang terukur sesuai dengan standar kompetensi kerja. Menunjukkan keterampilan
-                menalar, mengolah, dan menyaji secara efektif, kreatif, produktif, kritis, mandiri, kolaboratif,
-                komunikatif, dan solutif dalam ranah abstrak terkait dengan pengembangan dari yang dipelajarinya di
-                sekolah, serta mampu melaksanakan tugas spesifik di bawah pengawasan langsung. Menunjukkan keterampilan
-                mempersepsi, kesiapan, meniru, membiasakan, gerak mahir, menjadikan gerak alami dalam ranah konkret
-                terkait dengan pengembangan dari yang dipelajarinya di sekolah, serta mampu melaksanakan tugas spesifik
-                di bawah pengawasan langsung. </div>
-        </div>
-    </div>
-    <!-- [ indikator ] -->
-    <div class="slide slide-5 p-5">
-        <button onclick="changeSlide(slides[3])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:64px;">
-            <i class="fa-solid fa-arrow-left-long me-1"></i> Back
-        </button>
-        <button onclick="changeSlide(slides[2])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:180px;">
-            <i class="fa-solid fa-house"></i> Home
-        </button>
-        <div class="fs-5 w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap
-        " style="border-radius: .3rem; border-style: dashed !important;">
-            <div class="h1 mb-5">Indikator:</div>
-            <div style="height: max-content;" class="col-12 mb-3">3.12.1 Siswa dapat mengetahui prosedur mengoperasikan
-                kamera digital.</div>
-            <div style="height: max-content;" class="col-12 mb-3">3.12.2 Siswa dapat mengetahui cara merawat peralatan
-                fotografi.</div>
-            <div style="height: max-content;" class="col-12 mb-3">4.12.1 Siswa dapat mampu mengoperasikan kamera
-                digital.</div>
-        </div>
-    </div>
-    <!-- [ tujuan ] -->
-    <div class="slide slide-6 p-5">
-        <button onclick="changeSlide(slides[3])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:64px;">
-            <i class="fa-solid fa-arrow-left-long me-1"></i> Back
-        </button>
-        <button onclick="changeSlide(slides[2])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:180px;">
-            <i class="fa-solid fa-house"></i> Home
-        </button>
-        <div class="fs-5 w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap
-        " style="border-radius: .3rem; border-style: dashed !important;">
-            <div class="h1 mb-5">Indikator:</div>
-            <div style="height: max-content;" class="col-12 mb-3">3.12.1 Siswa dapat mengetahui prosedur mengoperasikan
-                kamera digital.</div>
-            <div style="height: max-content;" class="col-12 mb-3">3.12.2 Siswa dapat mengetahui cara merawat peralatan
-                fotografi.</div>
-            <div style="height: max-content;" class="col-12 mb-3">4.12.1 Siswa dapat mampu mengoperasikan kamera
-                digital.</div>
-        </div>
-    </div>
-    <!-- [ peta kompetensi ] -->
-    <div class="slide slide-7 p-5">
-        <button onclick="changeSlide(slides[3])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:64px;">
-            <i class="fa-solid fa-arrow-left-long me-1"></i> Back
-        </button>
-        <button onclick="changeSlide(slides[2])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:180px;">
-            <i class="fa-solid fa-house"></i> Home
-        </button>
-        <div class=" w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-row flex-wrap
-        " style="border-radius: .3rem; border-style: dashed !important;">
-            <div class="h1 mb-1 col-12">Peta Kompetensi:</div>
-            <div style="height: max-content;" class="col-12 d-flex justify-content-center">
-                <figure class="zoom shadow shadow-5-strong rounded-5" onmousemove="zoom(event)"
-                    style="background-size: 275%;background-image: url(./assets/img/peta-kompetensi.jpg)">
-                    <img src="./assets/img/peta-kompetensi.jpg" alt="Peta Kompetensi" class="col-10">
-                </figure>
+        <!-- slide -->
+        <div
+            class="slide slide-1 blob justify-content-center align-items-center flex-wrap flex-column bg-light"
+        >
+            <div
+                class="col-12 h1 text-center poppins text-dark"
+                style="font-weight: 500"
+            >
+                Selamat datang di
             </div>
+            <div
+                class="col-12 h1 text-center poppins text-navy"
+                style="font-weight: 700"
+            >
+                Media Pembelajaran Interaktif
+            </div>
+            <button
+                type="button"
+                class="btn btn-lg btn-warning mt-3"
+                onclick="changeSlide(slides[2])"
+            >
+                Mulai
+            </button>
         </div>
-    </div>
-    <!-- [ profil ] -->
-    <div class="slide slide-8 p-5">
-        <button onclick="changeSlide(slides[3])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:64px;">
-            <i class="fa-solid fa-arrow-left-long me-1"></i> Back
-        </button>
-        <button onclick="changeSlide(slides[2])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:180px;">
-            <i class="fa-solid fa-house"></i> Home
-        </button>
-        <div class=" w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap
-        " style="border-radius: .3rem; border-style: dashed !important;">
-            <div class="h1 mb-5 col-12">Profil:</div>
-            <div class="col-12 row justify-content-evenly">
-                <div class="card col-2">
-                    <img src="./assets/img/profil/reuben.jpg" class="card-img-top" alt="user" />
-                    <div class="card-body">
-                        <h5 class="card-title">Ahmad Reuben Adyatma</h5>
+        <!-- intro -->
+        <div class="slide slide-2 justify-content-center align-items-center">
+            <img src="./assets/img/menu.svg" class="menu-img col-3" alt="" />
+            <div class="fs-5 col-3 text-box-menu p-2 bg-light">
+                Selamat datang ! hover untuk melihat deskripsi !
+            </div>
+            <div class="fs-5 col-3 text-box-menu p-2 bg-light d-none opacity-0">
+                Bagian Pendahuluan berisi semua tentang hal hal yang perlu
+                diketahui terlebihh dahulu mencakup KDKI, Indikator, Tujuan,
+                Peta kompetensi, dan Profil !!
+            </div>
+            <div class="fs-5 col-3 text-box-menu p-2 bg-light d-none opacity-0">
+                Bagian Materi berisi semua tentang materi yang diperlukan
+                pengguna untuk bisa mengerjakan evaluasi dengan mudah, terdapat
+                2 materi didalam nya.
+            </div>
+            <div class="fs-5 col-3 text-box-menu p-2 bg-light d-none opacity-0">
+                bagian 3
+            </div>
+            <div class="col-3 d-flex flex-wrap flex-column align-items-stretch">
+                <div class="col-12 d-flex justify-content-center mb-3">
+                    <div
+                        onclick="changeSlide(slides[3])"
+                        onmouseover="changeTextBoxMenu(1)"
+                        class="col-6 btn btn-lg btn-light button-menu py-3"
+                        data-mdb-ripple-color="warning"
+                        id="menu1"
+                    >
+                        Pendahuluan
                     </div>
-                    <div class="card-footer text-muted">XII Multimedia - 3 / 03</div>
                 </div>
-                <div class="card col-2">
-                    <img src="./assets/img/profil/ananda.jpg" class="card-img-top" alt="user" />
-                    <div class="card-body">
-                        <h5 class="card-title">Ananda Aremawan L.P.</h5>
+                <div class="col-12 d-flex justify-content-center mb-3">
+                    <div
+                        onclick="changeSlide(slides[9])"
+                        onmouseover="changeTextBoxMenu(2)"
+                        class="col-6 btn btn-lg btn-light button-menu py-3"
+                        data-mdb-ripple-color="warning"
+                        id="menu2"
+                    >
+                        Materi
                     </div>
-                    <div class="card-footer text-muted">XII Multimedia - 3 / 05</div>
                 </div>
-                <div class="card col-2">
-                    <img src="./assets/img/profil/bayu.png" class="card-img-top" alt="user" />
-                    <div class="card-body">
-                        <h5 class="card-title">Bayu Rizki Firmansyah</h5>
+                <div class="col-12 d-flex justify-content-center mb-3">
+                    <div
+                        onclick="changeSlide(slides[12])"
+                        onmouseover="changeTextBoxMenu(3)"
+                        class="col-6 btn btn-lg btn-light button-menu py-3"
+                        data-mdb-ripple-color="warning"
+                        id="menu3"
+                    >
+                        Evaluasi
                     </div>
-                    <div class="card-footer text-muted">XII Multimedia - 3 / 09</div>
-                </div>
-                <div class="card col-2">
-                    <img src="./assets/img/profil/indra.JPG" class="card-img-top" alt="user" />
-                    <div class="card-body">
-                        <h5 class="card-title">Dwi Indra Lesmana</h5>
-                    </div>
-                    <div class="card-footer text-muted">XII Multimedia - 3 / 13</div>
-                </div>
-                <div class="card col-2">
-                    <img src="./assets/img/profil/faiz.jpg" class="card-img-top" alt="user" />
-                    <div class="card-body">
-                        <h5 class="card-title">Faiz Ramadhan</h5>
-                    </div>
-                    <div class="card-footer text-muted">XII Multimedia - 3 / 15</div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- (( materi )) -->
-    <div class="slide slide-9 justify-content-between align-items-center flex-column">
-        <button onclick="changeSlide(slides[2])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:64px;">
-            <i class="fa-solid fa-arrow-left-long me-1"></i> Back
-        </button>
-        <div class="col-6 d-flex justify-content-between align-items-stretch mb-3 flex-wrap pt-5 mt-5">
-            <div onclick="changeSlide(slides[10])" style="width: 47.5%;"
-                class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
-                data-mdb-ripple-color="warning">Pengoperasian kamera digital
+        <!-- (( pendahuluan )) -->
+        <div
+            class="slide slide-3 justify-content-between align-items-center flex-column"
+        >
+            <button
+                onclick="changeSlide(slides[2])"
+                type="button"
+                class="btn btn-warning position-absolute back-button"
+                style="top: 14px; right: 64px"
+            >
+                <i class="fa-solid fa-arrow-left-long me-1"></i> Back
+            </button>
+            <div
+                class="col-6 d-flex justify-content-between flex-wrap align-items-stretch mb-3 flex-wrap pt-5 mt-5"
+            >
+                <div
+                    style="width: 30%"
+                    onclick="changeSlide(slides[4])"
+                    class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
+                    data-mdb-ripple-color="warning"
+                >
+                    KDKI
+                </div>
+                <div
+                    style="width: 30%"
+                    onclick="changeSlide(slides[5])"
+                    class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
+                    data-mdb-ripple-color="warning"
+                >
+                    Indikator
+                </div>
+                <div
+                    style="width: 30%"
+                    onclick="changeSlide(slides[6])"
+                    class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
+                    data-mdb-ripple-color="warning"
+                >
+                    Tujuan
+                </div>
+                <div
+                    style="width: 47.5%"
+                    onclick="changeSlide(slides[7])"
+                    class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center mt-4"
+                    data-mdb-ripple-color="warning"
+                >
+                    Peta Kompetensi
+                </div>
+                <div
+                    style="width: 47.5%"
+                    onclick="changeSlide(slides[8])"
+                    class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center mt-4"
+                    data-mdb-ripple-color="warning"
+                >
+                    Profil
+                </div>
             </div>
-            <div onclick="changeSlide(slides[11])" style="width: 47.5%;"
-                class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
-                data-mdb-ripple-color="warning">Perawatan peralatan fotografi
+            <div
+                class="col-6 bg-light h-50 border-dark border-2 p-4 fs-5"
+                style="border-radius: 0.3rem; border-style: dashed !important"
+            >
+                Mulai dari KDKI berisi tentang hal hal yang akan ada pada
+                materi, lalu dilanjutkan dengan Indikator berisi tentang hal hal
+                yang harus dicapai siswa saat selesai menyelesaikan
+                pembelajaran, lalu tujuan berisi hal hal yang menjadi tujuan
+                dibuat nya media ini, peta kompetensi berisikan peta media ini,
+                dan terakhir profil berisi pengembang yang berpartisipasi
+                mengembangkan media ini hingga selesai.
             </div>
         </div>
-        <div class="col-12 bg-light h-50 w-50 border-dark border-2 p-4 fs-5"
-            style="border-radius: .3rem; border-style: dashed !important;">Materi yang terdapat pada media ini dibagi
-            menjadi 2 bagian yaitu untuk Pengoperasian kamera digital dan Perawatan peralatan fotografi. Didalam nya
-            terdapat materi materi yang telah dipilih agar pengguna dapat mengerjakan evaluasi dengan mudah. Klik pada
-            tombol diatas untuk membaca materi.</div>
-    </div>
-    <!-- [ Pengoperasian kamrea digital ] -->
-    <div class="slide slide-10 p-5">
-        <button onclick="changeSlide(slides[9])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:64px;">
-            <i class="fa-solid fa-arrow-left-long me-1"></i> Back
-        </button>
-        <button onclick="changeSlide(slides[2])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:180px;">
-            <i class="fa-solid fa-house"></i> Home
-        </button>
-        <div class="w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap
-        " style="border-radius: .3rem; border-style: dashed !important;">
-            <div class="h1 mb-5">Pengoperasian Kamera Digital:</div>
-            <p>Kamera digital adalah kamera otomatis yang menggunakan format pengambilan gambar dan penyimpanan digital
-                dengan ukuran kecil dan ringan sehingga mudah dibawa. Kamera digital pada umumnya memiliki karakter yang
-                sama seperti kamera manual. Kamera digital telah dilengkapi dengan berbagai fasilitas seperti kemampuan
-                untuk menangani pencahayaan yang lemah dan fokus atas (close up).</p>
-            <p>Kamera digital memiliki komponen-komponen terpenting, komponen kamera digital diantaranya:</p>
-            <ul>
-                <li><strong>Body kamera</strong></li>
-                <li><strong>Lensa</strong></li>
-                <li><strong>Tombol shutter (tombol menjepret)</strong></li>
-                <li><strong>Memory card</strong></li>
-            </ul>
-            <p>Berikut cara menggunakan kamera digital agar menghasilkan foto yang lebih bagus:</p>
-            <ul>
-                <li><strong>Aktifkan kamera</strong>, kemudian aturlah kamera pada mode otomatis. Untuk menghemat
-                    baterai matikan pembidik LCD dan gunakan pembidik optic yang tersedia.</li>
-                <li><strong>Gunakan flash</strong>, Lampu flash berfungsi untuk membekukan gerakan, dengan menggunakan
-                    flash untuk menerangi obyek foto yang membelakangi arah cahaya.</li>
-                <li><strong>Hindari Zoom Digital</strong>, Untuk mendapatkan ketajaman dan kualitas foto yang baik,
-                    gunakan zoom optik untuk membidik obyek foto dari jarak jauh, dan hindari menggunakan zoom digital.
-                </li>
-                <li><strong>Memanfaatkan Scene Mode</strong>, Kamera digital pada umumnya sudah menyediakan mode
-                    otomatis untuk pemotretan landscape, portrait, serta night shot.</li>
-                <li><strong>Menggeser Fokus</strong>, Mencoba untuk menggeser fokus, dari fokus tengah kearah pinggir.
-                </li>
-                <li><strong>Gunakan Tripod</strong>, untuk menopang kamera agar tidak goyang saat melakukan pemotretan.x
-                </li>
-            </ul>
+        <!-- [ kdki ] -->
+        <div class="slide slide-4 p-5">
+            <button
+                onclick="changeSlide(slides[3])"
+                type="button"
+                class="btn btn-warning position-absolute back-button"
+                style="top: 14px; right: 64px"
+            >
+                <i class="fa-solid fa-arrow-left-long me-1"></i> Back
+            </button>
+            <button
+                onclick="changeSlide(slides[2])"
+                type="button"
+                class="btn btn-warning position-absolute"
+                style="top: 14px; right: 180px"
+            >
+                <i class="fa-solid fa-house"></i> Home
+            </button>
+            <div
+                class="w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap"
+                style="border-radius: 0.3rem; border-style: dashed !important"
+            >
+                <div class="h1 mb-5">KDKI:</div>
+                <ul class="col-count-2">
+                    <li>
+                        <strong>3.12</strong>
+                        <p>
+                            Menerapkan pengoperasian kamera digital dan
+                            perawatan peralatan fotografi.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>4.12</strong>
+                        <p>
+                            Mengoperasikan kamera digital dan perawatan
+                            fotografi.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>KI-3 (Pengetahuan)</strong>
+                        <p>
+                            Memahami, menerapkan, menganalisis, dan mengevaluasi
+                            tentang pengetahuan faktual, konseptual, operasional
+                            dasar, dan metakognitif sesuai dengan bidang dan
+                            lingkup Simulasi dan Komunikasi Digital (Simdig)
+                            pada tingkat teknis, spesifik, detil, dan kompleks,
+                            berkenaan dengan ilmu pengetahuan, teknologi, seni,
+                            budaya, dan humaniora dalam konteks pengembangan
+                            potensi diri sebagai bagian dari keluarga, sekolah,
+                            dunia kerja, warga masyarakat nasional, regional,
+                            dan internasional.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>KI-4 (Keterampilan)</strong>
+                        <p>
+                            Melaksanakan tugas spesifik dengan menggunakan alat,
+                            informasi, dan prosedur kerja yang lazim dilakukan
+                            serta memecahkan masalah sesuai dengan lingkup
+                            Simulasi dan Komunikasi Digital (Simdig).
+                            Menampilkan kinerja di bawah bimbingan dengan mutu
+                            dan kuantitas yang terukur sesuai dengan standar
+                            kompetensi kerja. Menunjukkan keterampilan menalar,
+                            mengolah, dan menyaji secara efektif, kreatif,
+                            produktif, kritis, mandiri, kolaboratif,
+                            komunikatif, dan solutif dalam ranah abstrak terkait
+                            dengan pengembangan dari yang dipelajarinya di
+                            sekolah, serta mampu melaksanakan tugas spesifik di
+                            bawah pengawasan langsung. Menunjukkan keterampilan
+                            mempersepsi, kesiapan, meniru, membiasakan, gerak
+                            mahir, menjadikan gerak alami dalam ranah konkret
+                            terkait dengan pengembangan dari yang dipelajarinya
+                            di sekolah, serta mampu melaksanakan tugas spesifik
+                            di bawah pengawasan langsung.
+                        </p>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <!-- [ Perawatan peralatan fotografi ] -->
-    <div class="slide slide-11 p-5">
-        <button onclick="changeSlide(slides[9])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:64px;">
-            <i class="fa-solid fa-arrow-left-long me-1"></i> Back
-        </button>
-        <button onclick="changeSlide(slides[2])" type="button" class="btn btn-warning position-absolute"
-            style="top: 14px; right:180px;">
-            <i class="fa-solid fa-house"></i> Home
-        </button>
-        <div class="w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap
-        " style="border-radius: .3rem; border-style: dashed !important;">
-            <h1>Perawatan peralatan fotografi:</h1>
-            <ul>
-                <li><strong>Merawat kamera</strong>
-                    <p>Merawat bagian luar kamera/casing merupakan bagian yang biasa dilakukan terlebih dahulu.
-                        <ul>
-                            <li>
-                                - Bersihkan bagian luar kamera dengan blower terlebih dahulu, untuk beberapa debu yang masih
-                                menempel dapat dipergunakan brush.
-                            </li>
-                            <li>
-                                - Selanjutnya pergunakan lens cloth atau dry cloth.
-                            </li>
-                        </ul>
-                    </p>
-                </li>
-                <li>
-                    <strong>Merawat Lensa</strong>
-                    <p>Langkah yang dilakukan dalam merawat lensa diantaranya; tidak menyentuh lensa secara langsung dengan jari, gunakan lens hood untuk melindungi bagian depan lensa, pasang lens cap ketika lensa sedang tidak dipergunakan, hal ini bertujuan mengurangi kemungkinan terpapar dan menempelnya debu pada permukaan lensa.</p>
-                </li>
-                <li>
-                    <strong>Merawat Baterai</strong>
-                    <p>Tidak membiarkan baterai terpapar suhu ekstrim diatas 43 ‘C, letakan baterai pada tempat yang sejuk. Tidak men-charge baterai secara berlebihan, jika charge telah menunjukkan baterai terisi penuh segera cabut. Charge baterai sebelum dan sesudah penyimpanan dalam jangka waktu lama.</p>
-                </li>
-                <li>
-                    <strong>Media penyimpanan</strong>
-                    <p>Memori card berupa SD/Secure Digital, CF/Compact Flash, dan sebagainya, simpan kembali pada casingnya masing-masing setelah digunakan untuk melindungi dari debu. Dudukan flash dan kontak baterai flash perlu dibersihkan secara berkala untuk menghindari penumpukan kotoran.</p>
-                </li>
-                <li>
-                    <strong>Tas Kamera</strong>
-                    <p>Selesai dipergunakan, keluarkan isinya lalu bersihkan bagian dalam dan luarnya lalu Cuci tas kemara dalam jangka waktu berkala.
-                    </p>
-                </li>
-            </ul>
+        <!-- [ indikator ] -->
+        <div class="slide slide-5 p-5">
+            <button
+                onclick="changeSlide(slides[3])"
+                type="button"
+                class="btn btn-warning position-absolute back-button"
+                style="top: 14px; right: 64px"
+            >
+                <i class="fa-solid fa-arrow-left-long me-1"></i> Back
+            </button>
+            <button
+                onclick="changeSlide(slides[2])"
+                type="button"
+                class="btn btn-warning position-absolute"
+                style="top: 14px; right: 180px"
+            >
+                <i class="fa-solid fa-house"></i> Home
+            </button>
+            <div
+                class="fs-5 w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap"
+                style="border-radius: 0.3rem; border-style: dashed !important"
+            >
+                <div class="h1 mb-5">Indikator:</div>
+                <ul>
+                    <li>
+                        <strong>3.12.1</strong>
+                        <p>
+                            Siswa dapat mengetahui prosedur mengoperasikan
+                            kamera digital.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>3.12.2</strong>
+                        <p>
+                            Siswa dapat mengetahui cara merawat peralatan
+                            fotografi.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>4.12.1</strong>
+                        <p>Siswa dapat mampu mengoperasikan kamera digital.</p>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-
-    <!-- slider -->
-    <div class="slider-dmi d-flex justify-content-center align-items-center">
-    </div>
-    <div class="text-light h1 loading-text">TEST</div>
-    <!-- end slider -->
-    <script src="assets/fontawesome/js/all.min.js"></script>
-    <script src="assets/js/mdb.min.js"></script>
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-</body>
-
+        <!-- [ tujuan ] -->
+        <div class="slide slide-6 p-5">
+            <button
+                onclick="changeSlide(slides[3])"
+                type="button"
+                class="btn btn-warning position-absolute back-button"
+                style="top: 14px; right: 64px"
+            >
+                <i class="fa-solid fa-arrow-left-long me-1"></i> Back
+            </button>
+            <button
+                onclick="changeSlide(slides[2])"
+                type="button"
+                class="btn btn-warning position-absolute"
+                style="top: 14px; right: 180px"
+            >
+                <i class="fa-solid fa-house"></i> Home
+            </button>
+            <div
+                class="fs-5 w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap"
+                style="border-radius: 0.3rem; border-style: dashed !important"
+            >
+                <div class="h1 mb-5">Tujuan:</div>
+                <ul>
+                    <li>
+                        <strong>3.12.1</strong>
+                        <p>
+                            Siswa dapat mengetahui prosedur mengoperasikan
+                            kamera digital.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>3.12.2</strong>
+                        <p>
+                            Siswa dapat mengetahui cara merawat peralatan
+                            fotografi.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>4.12.1</strong>
+                        <p>Siswa dapat mampu mengoperasikan kamera digital.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- [ peta kompetensi ] -->
+        <div class="slide slide-7 p-5">
+            <button
+                onclick="changeSlide(slides[3])"
+                type="button"
+                class="btn btn-warning position-absolute back-button"
+                style="top: 14px; right: 64px"
+            >
+                <i class="fa-solid fa-arrow-left-long me-1"></i> Back
+            </button>
+            <button
+                onclick="changeSlide(slides[2])"
+                type="button"
+                class="btn btn-warning position-absolute"
+                style="top: 14px; right: 180px"
+            >
+                <i class="fa-solid fa-house"></i> Home
+            </button>
+            <div
+                class="w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-row flex-wrap"
+                style="border-radius: 0.3rem; border-style: dashed !important"
+            >
+                <div class="h1 mb-1 col-12">Peta Kompetensi:</div>
+                <div
+                    style="height: max-content"
+                    class="col-12 d-flex justify-content-center"
+                >
+                    <figure
+                        cla back-buttonss="zoom shadow shadow-5-strong rounded-5"
+                        onm back-buttonousemove="zoom(event)"
+                        style="
+                            background-size: 275%;
+                            background-image: url(./assets/img/peta-kompetensi.jpg);
+                        "
+                    >
+                        <img
+                            src="./assets/img/peta-kompetensi.jpg"
+                            alt="Peta Kompetensi"
+                            class="col-10"
+                        />
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <!-- [ profil ] -->
+        <div class="slide slide-8 p-5">
+            <button
+                onclick="changeSlide(slides[3])"
+                type="button"
+                class="btn btn-warning position-absolute back-button"
+                style="top: 14px; right: 64px"
+            >
+                <i class="fa-solid fa-arrow-left-long me-1"></i> Back
+            </button>
+            <button
+                onclick="changeSlide(slides[2])"
+                type="button"
+                class="btn btn-warning position-absolute"
+                style="top: 14px; right: 180px"
+            >
+                <i class="fa-solid fa-house"></i> Home
+            </button>
+            <div
+                class="w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap"
+                style="border-radius: 0.3rem; border-style: dashed !important"
+            >
+                <div class="h1 mb-5 col-12">Profil:</div>
+                <div class="col-12 row justify-content-evenly">
+                    <div class="card col-2 px-0">
+                        <img
+                            src="./assets/img/profil/reuben.jpg"
+                            class="card-img-top"
+                            alt="user"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Ahmad Reuben Adyatma</h5>
+                        </div>
+                        <div class="card-footer text-muted">
+                            XII Multimedia - 3 / 03
+                        </div>
+                    </div>
+                    <div class="card col-2 px-0">
+                        <img
+                            src="./assets/img/profil/ananda.jpg"
+                            class="card-img-top"
+                            alt="user"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Ananda Aremawan L.P.</h5>
+                        </div>
+                        <div class="card-footer text-muted">
+                            XII Multimedia - 3 / 05
+                        </div>
+                    </div>
+                    <div class="card col-2 px-0">
+                        <img
+                            src="./assets/img/profil/bayu.png"
+                            class="card-img-top"
+                            alt="user"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Bayu Rizki Firmansyah</h5>
+                        </div>
+                        <div class="card-footer text-muted">
+                            XII Multimedia - 3 / 09
+                        </div>
+                    </div>
+                    <div class="card col-2 px-0">
+                        <img
+                            src="./assets/img/profil/indra.JPG"
+                            class="card-img-top"
+                            alt="user"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Dwi Indra Lesmana</h5>
+                        </div>
+                        <div class="card-footer text-muted">
+                            XII Multimedia - 3 / 13
+                        </div>
+                    </div>
+                    <div class="card col-2 px-0">
+                        <img
+                            src="./assets/img/profil/faiz.jpg"
+                            class="card-img-top"
+                            alt="user"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Faiz Ramadhan</h5>
+                        </div>
+                        <div class="card-footer text-muted">
+                            XII Multimedia - 3 / 15
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- (( materi )) -->
+        <div
+            class="slide slide-9 justify-content-between align-items-center flex-column"
+        >
+            <button
+                onclick="changeSlide(slides[2])"
+                type="button"
+                class="btn btn-warning position-absolute back-button"
+                style="top: 14px; right: 64px"
+            >
+                <i class="fa-solid fa-arrow-left-long me-1"></i> Back
+            </button>
+            <div
+                class="col-6 d-flex justify-content-between align-items-stretch mb-3 flex-wrap pt-5 mt-5"
+            >
+                <div
+                    onclick="changeSlide(slides[10])"
+                    style="width: 47.5%"
+                    class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
+                    data-mdb-ripple-color="warning"
+                >
+                    Pengoperasian kamera digital
+                </div>
+                <div
+                    onclick="changeSlide(slides[11])"
+                    style="width: 47.5%"
+                    class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
+                    data-mdb-ripple-color="warning"
+                >
+                    Perawatan peralatan fotografi
+                </div>
+            </div>
+            <div
+                class="col-12 bg-light h-50 w-50 border-dark border-2 p-4 fs-5"
+                style="border-radius: 0.3rem; border-style: dashed !important"
+            >
+                Materi yang terdapat pada media ini dibagi menjadi 2 bagian
+                yaitu untuk Pengoperasian kamera digital dan Perawatan peralatan
+                fotografi. Didalam nya terdapat materi materi yang telah dipilih
+                agar pengguna dapat mengerjakan evaluasi dengan mudah. Klik pada
+                tombol diatas untuk membaca materi.
+            </div>
+        </div>
+        <!-- [ Pengoperasian kamrea digital ] -->
+        <div class="slide slide-10 p-5">
+            <button
+                onclick="changeSlide(slides[9])"
+                type="button"
+                class="btn btn-warning position-absolute back-button"
+                style="top: 14px; right: 64px"
+            >
+                <i class="fa-solid fa-arrow-left-long me-1"></i> Back
+            </button>
+            <button
+                onclick="changeSlide(slides[2])"
+                type="button"
+                class="btn btn-warning position-absolute"
+                style="top: 14px; right: 180px"
+            >
+                <i class="fa-solid fa-house"></i> Home
+            </button>
+            <div
+                class="w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap"
+                style="border-radius: 0.3rem; border-style: dashed !important"
+            >
+                <div class="h1 mb-5">Pengoperasian Kamera Digital:</div>
+                <p>
+                    Kamera digital adalah kamera otomatis yang menggunakan
+                    format pengambilan gambar dan penyimpanan digital dengan
+                    ukuran kecil dan ringan sehingga mudah dibawa. Kamera
+                    digital pada umumnya memiliki karakter yang sama seperti
+                    kamera manual. Kamera digital telah dilengkapi dengan
+                    berbagai fasilitas seperti kemampuan untuk menangani
+                    pencahayaan yang lemah dan fokus atas (close up).
+                </p>
+                <p>
+                    Kamera digital memiliki komponen-komponen terpenting,
+                    komponen kamera digital diantaranya:
+                </p>
+                <ul class="col-count-2">
+                    <li><strong>Body kamera</strong></li>
+                    <li><strong>Lensa</strong></li>
+                    <li><strong>Tombol shutter (tombol menjepret)</strong></li>
+                    <li><strong>Memory card</strong></li>
+                </ul>
+                <p>
+                    Berikut cara menggunakan kamera digital agar menghasilkan
+                    foto yang lebih bagus:
+                </p>
+                <ul class="col-count-2">
+                    <li>
+                        <strong>Aktifkan kamera</strong>, kemudian aturlah
+                        kamera pada mode otomatis. Untuk menghemat baterai
+                        matikan pembidik LCD dan gunakan pembidik optic yang
+                        tersedia.
+                    </li>
+                    <li>
+                        <strong>Gunakan flash</strong>, Lampu flash berfungsi
+                        untuk membekukan gerakan, dengan menggunakan flash untuk
+                        menerangi obyek foto yang membelakangi arah cahaya.
+                    </li>
+                    <li>
+                        <strong>Hindari Zoom Digital</strong>, Untuk mendapatkan
+                        ketajaman dan kualitas foto yang baik, gunakan zoom
+                        optik untuk membidik obyek foto dari jarak jauh, dan
+                        hindari menggunakan zoom digital.
+                    </li>
+                    <li>
+                        <strong>Memanfaatkan Scene Mode</strong>, Kamera digital
+                        pada umumnya sudah menyediakan mode otomatis untuk
+                        pemotretan landscape, portrait, serta night shot.
+                    </li>
+                    <li>
+                        <strong>Menggeser Fokus</strong>, Mencoba untuk
+                        menggeser fokus, dari fokus tengah kearah pinggir.
+                    </li>
+                    <li>
+                        <strong>Gunakan Tripod</strong>, untuk menopang kamera
+                        agar tidak goyang saat melakukan pemotretan.x
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- [ Perawatan peralatan fotografi ] -->
+        <div class="slide slide-11 p-5">
+            <button
+                onclick="changeSlide(slides[9])"
+                type="button"
+                class="btn btn-warning position-absolute back-button"
+                style="top: 14px; right: 64px"
+            >
+                <i class="fa-solid fa-arrow-left-long me-1"></i> Back
+            </button>
+            <button
+                onclick="changeSlide(slides[2])"
+                type="button"
+                class="btn btn-warning position-absolute"
+                style="top: 14px; right: 180px"
+            >
+                <i class="fa-solid fa-house"></i> Home
+            </button>
+            <div
+                class="w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap"
+                style="border-radius: 0.3rem; border-style: dashed !important"
+            >
+                <h1>Perawatan peralatan fotografi:</h1>
+                <ul>
+                    <li>
+                        <strong>Merawat kamera</strong>
+                        <p>
+                            Bersihkan bagian luar kamera dengan blower terlebih
+                            dahulu, untuk beberapa debu yang masih menempel
+                            dapat dipergunakan brush. Selanjutnya pergunakan
+                            lens cloth atau dry cloth.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Merawat Lensa</strong>
+                        <p>
+                            Langkah yang dilakukan dalam merawat lensa
+                            diantaranya; tidak menyentuh lensa secara langsung
+                            dengan jari, gunakan lens hood untuk melindungi
+                            bagian depan lensa, pasang lens cap ketika lensa
+                            sedang tidak dipergunakan, hal ini bertujuan
+                            mengurangi kemungkinan terpapar dan menempelnya debu
+                            pada permukaan lensa.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Merawat Baterai</strong>
+                        <p>
+                            Tidak membiarkan baterai terpapar suhu ekstrim
+                            diatas 43 ‘C, letakan baterai pada tempat yang
+                            sejuk. Tidak men-charge baterai secara berlebihan,
+                            jika charge telah menunjukkan baterai terisi penuh
+                            segera cabut. Charge baterai sebelum dan sesudah
+                            penyimpanan dalam jangka waktu lama.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Media penyimpanan</strong>
+                        <p>
+                            Memori card berupa SD/Secure Digital, CF/Compact
+                            Flash, dan sebagainya, simpan kembali pada casingnya
+                            masing-masing setelah digunakan untuk melindungi
+                            dari debu. Dudukan flash dan kontak baterai flash
+                            perlu dibersihkan secara berkala untuk menghindari
+                            penumpukan kotoran.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Tas Kamera</strong>
+                        <p>
+                            Selesai dipergunakan, keluarkan isinya lalu
+                            bersihkan bagian dalam dan luarnya lalu Cuci tas
+                            kemara dalam jangka waktu berkala.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- (( evaluasi )) -->
+        <div
+            class="slide slide-12 justify-content-between align-items-center flex-column"
+        >
+            <button
+                onclick="changeSlide(slides[2])"
+                type="button"
+                class="btn btn-warning position-absolute back-button"
+                style="top: 14px; right: 64px"
+            >
+                <i class="fa-solid fa-arrow-left-long me-1"></i> Back
+            </button>
+            <div
+                class="col-6 d-flex justify-content-between align-items-stretch mb-3 flex-wrap pt-5 mt-5"
+            >
+                <div
+                    onclick="changeSlide(slides[10])"
+                    style="width: 47.5%"
+                    class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
+                    data-mdb-ripple-color="warning"
+                >
+                    Rangkuman
+                </div>
+                <div
+                    onclick="changeSlide(slides[11])"
+                    style="width: 47.5%"
+                    class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
+                    data-mdb-ripple-color="warning"
+                >
+                    Glosarium
+                </div>
+                <div
+                    onclick="changeSlide(slides[11])"
+                    style="width: 100%"
+                    class="btn btn-lg btn-light button-menu py-3 mt-3 align-items-center d-flex justify-content-center"
+                    data-mdb-ripple-color="warning"
+                >
+                    Soal dan Nilai
+                </div>
+            </div>
+            <div
+                class="col-12 bg-light h-50 w-50 border-dark border-2 p-4 fs-5"
+                style="border-radius: 0.3rem; border-style: dashed !important"
+            >
+                Didalam evaluasi terdapat 3 bagian yaitu, rangkuman, glosarium, dan soal & nilai. rangkuman berisi rangkuman dari materi yang telah di tampilkan pada slide materi, lalu glosarium berisi kata kata yang sulit dimengerti diseluruh media ini, dan terakhir nilai & soal berisi soal yang menentukan apakah pengguna telah mencapai KDKI yang ditargetkan, atau belum.
+            </div>
+        </div>
+        <!-- slider -->
+        <div
+            class="slider-dmi d-flex justify-content-center align-items-center"
+        ></div>
+        <div class="text-light h1 loading-text">TEST</div>
+        <!-- end slider -->
+        <script src="assets/fontawesome/js/all.min.js"></script>
+        <script src="assets/js/mdb.min.js"></script>
+        <script src="assets/js/gsap.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>

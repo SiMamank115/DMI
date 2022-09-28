@@ -51,7 +51,6 @@ body {
     opacity: 1;
 }
 .slide {
-    opacity: 0.8;
     background-image: radial-gradient(var(--mdb-orange) 2px, transparent 2px),
         radial-gradient(var(--mdb-orange) 2px, var(--mdb-light) 2px);
     background-size: 80px 80px;
@@ -70,18 +69,6 @@ body {
 .button-menu.uncolled {
     width: 150px;
 }
-/* .button-menu-1 {
-    transform: translate(-400px, 0px);
-}
-.button-menu-2 {
-    transform: translate(400px, -200px);
-}
-.button-menu-3 {
-    transform: translate(400px, 200px);
-} */
-/* .button-menu:hover {
-    
-} */
 .text-box-menu {
     border-radius: 0.3rem;
     border: 2px var(--mdb-dark);
@@ -110,4 +97,7 @@ figure.zoom img {
     display: block;
     width: 100%;
     height: 100%;
+}
+.col-count-2 {
+    column-count: 2;
 }

@@ -9,7 +9,7 @@ document.onreadystatechange = (e) => {
         document.querySelector(".loading-bar").ariaValueNow = "100";
         document.querySelector(".loading-bar").style.width = "100%";
         setTimeout(() => {
-            changeSlide(slides[11]);
+            changeSlide(slides[12]);
         }, 600);
     }
 };
@@ -48,7 +48,9 @@ const loadingText = [
         }, 250);
     },
     changeSlide = (Slide) => {
+        let duration = 0.5
         if (onChangeSlide) return;
+        let currentSlide = slideOnScreen? slideOnScreen : slides[0]
         document.querySelector(".loading-text").textContent = loadingText[Math.floor(Math.random() * loadingText.length)];
         onChangeSlide = true;
         let target = document.querySelector(".slider-dmi"),
@@ -58,37 +60,36 @@ const loadingText = [
             y:"-20%",
             opacity:0
         })
+        gsap.to(Slide.el,{opacity:0,duration:0})
+        gsap.to(currentSlide.el,{opacity:0,duration:duration,repeat:1,yoyo:true})
         gsap.to(target,{
             y:0,
-            duration:0.6,
+            duration:duration,
             ease:"power3.out",
             onComplete: () => {
-                if (slideOnScreen != undefined) {
-                    slideOnScreen.off();
-                } else {
-                    slides[0].off();
-                }
+                currentSlide.off()
                 Slide.on();
             }
         })
         gsap.to(targetText,{
-            duration:0.3,
+            duration:duration/2,
             y:0,
             opacity:1,
             ease:"power1.out",
-            delay:0.4
+            delay:duration/1.5
         })
+        gsap.to(Slide.el,{opacity:1,duration:duration*1.26,delay:duration/0.5454,ease:"power2.in"})
         gsap.to(targetText,{
             ease:"power2.in",
             y:"100%",
-            duration:0.6,
-            delay:1
+            duration:duration,
+            delay:duration*1.5
         })
         gsap.to(target, {
             ease:"power2.in",
             y:"100%",
-            duration:0.6,
-            delay:1,
+            duration:duration,
+            delay:duration*1.5,
             onComplete : () => {
                 gsap.to(target, {y:"-100%",duration:0})
                 gsap.to(targetText, {y:"-100%",duration:0})
@@ -135,3 +136,5 @@ slides.push(new Slide(document.querySelector(".slide-9")));
 slides.push(new Slide(document.querySelector(".slide-10")));
 // [ Perawatan peralatan fotografi ]
 slides.push(new Slide(document.querySelector(".slide-11")));
+// (( evaluasi ))
+slides.push(new Slide(document.querySelector(".slide-12")));
