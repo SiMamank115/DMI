@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>DMI</title>
+        <title>DMI | Inti</title>
         <link rel="stylesheet" href="assets/css/mdb.min.css" />
         <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
         <link rel="stylesheet" href="./assets/css/style.css" />
@@ -75,7 +75,7 @@
                 2 materi didalam nya.
             </div>
             <div class="fs-5 col-3 text-box-menu p-2 bg-light d-none opacity-0">
-                bagian 3
+                Di bagian evaluasi, terdapat 3 bagian yang dapat diakses yaitu, Rangkuman, Glosarium, dan Nilai & soal.
             </div>
             <div class="col-3 d-flex flex-wrap flex-column align-items-stretch">
                 <div class="col-12 d-flex justify-content-center mb-3">
@@ -379,8 +379,8 @@
                     class="col-12 d-flex justify-content-center"
                 >
                     <figure
-                        cla back-buttonss="zoom shadow shadow-5-strong rounded-5"
-                        onm back-buttonousemove="zoom(event)"
+                        class="zoom shadow shadow-5-strong rounded-5"
+                        onmousemove="zoom(event)"
                         style="
                             background-size: 275%;
                             background-image: url(./assets/img/peta-kompetensi.jpg);
@@ -633,7 +633,7 @@
                 style="border-radius: 0.3rem; border-style: dashed !important"
             >
                 <h1>Perawatan peralatan fotografi:</h1>
-                <ul>
+                <ul class="col-count-2">
                     <li>
                         <strong>Merawat kamera</strong>
                         <p>
@@ -704,7 +704,7 @@
                 class="col-6 d-flex justify-content-between align-items-stretch mb-3 flex-wrap pt-5 mt-5"
             >
                 <div
-                    onclick="changeSlide(slides[10])"
+                    onclick="changeSlide(slides[13])"
                     style="width: 47.5%"
                     class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
                     data-mdb-ripple-color="warning"
@@ -712,7 +712,7 @@
                     Rangkuman
                 </div>
                 <div
-                    onclick="changeSlide(slides[11])"
+                    onclick="changeSlide(slides[14])"
                     style="width: 47.5%"
                     class="btn btn-lg btn-light button-menu py-3 align-items-center d-flex justify-content-center"
                     data-mdb-ripple-color="warning"
@@ -720,7 +720,7 @@
                     Glosarium
                 </div>
                 <div
-                    onclick="changeSlide(slides[11])"
+                    onclick="changeSlide(slides[14])"
                     style="width: 100%"
                     class="btn btn-lg btn-light button-menu py-3 mt-3 align-items-center d-flex justify-content-center"
                     data-mdb-ripple-color="warning"
@@ -732,18 +732,115 @@
                 class="col-12 bg-light h-50 w-50 border-dark border-2 p-4 fs-5"
                 style="border-radius: 0.3rem; border-style: dashed !important"
             >
-                Didalam evaluasi terdapat 3 bagian yaitu, rangkuman, glosarium, dan soal & nilai. rangkuman berisi rangkuman dari materi yang telah di tampilkan pada slide materi, lalu glosarium berisi kata kata yang sulit dimengerti diseluruh media ini, dan terakhir nilai & soal berisi soal yang menentukan apakah pengguna telah mencapai KDKI yang ditargetkan, atau belum.
+                Didalam evaluasi terdapat 3 bagian yaitu, rangkuman, glosarium,
+                dan soal & nilai. rangkuman berisi rangkuman dari materi yang
+                telah di tampilkan pada slide materi, lalu glosarium berisi kata
+                kata yang sulit dimengerti diseluruh media ini, dan terakhir
+                nilai & soal berisi soal yang menentukan apakah pengguna telah
+                mencapai KDKI yang ditargetkan, atau belum.
+            </div>
+        </div>
+        <!-- [ Rangkuman ] -->
+        <div class="slide slide-13 p-5">
+            <button
+                onclick="changeSlide(slides[12])"
+                type="button"
+                class="btn btn-warning position-absolute back-button"
+                style="top: 14px; right: 64px"
+            >
+                <i class="fa-solid fa-arrow-left-long me-1"></i> Back
+            </button>
+            <button
+                onclick="changeSlide(slides[2])"
+                type="button"
+                class="btn btn-warning position-absolute"
+                style="top: 14px; right: 180px"
+            >
+                <i class="fa-solid fa-house"></i> Home
+            </button>
+            <div
+                class="w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap"
+                style="border-radius: 0.3rem; border-style: dashed !important"
+            >
+                <h1>Rangkuman:</h1>
+                <ul class="col-count-2">
+                    <li>
+                        <p><strong>Kamera digital</strong> adalah kamera otomatis yang menggunakan format pengambilan gambar dan penyimpanan digital dengan ukuran kecil dan ringan sehingga mudah dibawa. </p>
+                    </li>
+                    <li>
+                        <p><strong>Kamera digital</strong> memiliki komponen-komponen terpenting diantara lain adalah Body kamera, Lensa, Tombol shutter (tombol menjepret), Memory card.</p>
+                    </li>
+                    <li>
+                        <p>Agar dapat menghasilkan foto yang bagus, salah satu cara nya adalah dengan menggunakan <strong>tripod</strong> agar kamera tidak bergoyang saat melakukan pemotretan. </p>
+                    </li>
+                    <li>
+                        <p>Ada 3 elemen pada kamera digital yang harus dijaga, yaitu <strong>Lensa</strong>, <strong>Baterai</strong>, dan <strong>SD Card</strong>.</p>
+                    </li>
+                    <li>
+                        <p>Untuk merawat kamera digital, bersihkan secara berkala untuk menghindari penumpukan kotoran dan simpan kamera digital didalam <strong>dry box</strong>. </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- [ Glosarium ] -->
+        <div class="slide slide-14 p-5">
+            <button
+                onclick="changeSlide(slides[12])"
+                type="button"
+                class="btn btn-warning position-absolute back-button"
+                style="top: 14px; right: 64px"
+            >
+                <i class="fa-solid fa-arrow-left-long me-1"></i> Back
+            </button>
+            <button
+                onclick="changeSlide(slides[2])"
+                type="button"
+                class="btn btn-warning position-absolute"
+                style="top: 14px; right: 180px"
+            >
+                <i class="fa-solid fa-house"></i> Home
+            </button>
+            <div
+                class="w-100 border-dark border-2 p-3 m-3 text-dark d-flex align-items-start justify-content-start flex-column flex-wrap"
+                style="border-radius: 0.3rem; border-style: dashed !important"
+            >
+                <h1>Glosarium:</h1>
+                <ul class="col-count-2">
+                    <li>
+                        <p><strong>Dry box </strong>: wadah yang tahan air dan tahan debu, Suhu didalamnya tidak akan berubah dan relatif sama dengan suhu ruangan.</p>
+                    </li>
+                    <li>
+                        <p><strong>Digital </strong>: berhubungan dengan angka-angka untuk sistem perhitungan tertentu.</p>
+                    </li>
+                    <li>
+                        <p><strong>Metakognitif </strong>: kesadaran seseorang untuk mengontrol ranah kognitif di dalam dirinya.</p>
+                    </li>
+                    <li>
+                        <p><strong>Spesifik </strong>: bersifat khusus.</p>
+                    </li>
+                    <li>
+                        <p><strong>Detail </strong>: bagian yang kecil-kecil (yang sangat terperinci).</p>
+                    </li>
+                    <li>
+                        <p><strong>Humaniora </strong>: ilmu pengetahuan yang meliputi filsafat, hukum, sejarah, bahasa, sastra, seni, dan sebagainya.</p>
+                    </li>
+                    <li>
+                        <p><strong>Format </strong>: bentuk dan ukuran (buku, surat kabar, dan sebagainya).</p>
+                    </li>
+                    <li>
+                        <p><strong>Diafragma </strong>: struktur buram tipis dengan bukaan di tengahnya.</p>
+                    </li>
             </div>
         </div>
         <!-- slider -->
         <div
             class="slider-dmi d-flex justify-content-center align-items-center"
         ></div>
-        <div class="text-light h1 loading-text">TEST</div>
+        <div class="text-light h1 loading-text"></div>
         <!-- end slider -->
         <script src="assets/fontawesome/js/all.min.js"></script>
         <script src="assets/js/mdb.min.js"></script>
         <script src="assets/js/gsap.min.js"></script>
-        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/script.js" type="module"></script>
     </body>
 </html>

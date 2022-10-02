@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Poppins";
+    src: url(../font/Poppins-Regular.ttf);
+}
+body {
+    overflow-x: hidden !important;
+    min-height: 100vh;
+}
+* {
+    font-family: "Poppins", sans-serif;
+}
+.poppins {
+    font-family: "Poppins", sans-serif !important;
+}
+.text-navy {
+    color: #2b2d42;
+}
+.soal-container {
+    width: 100vw;
+    /* min-height: 200vh; */
+}
+.col-count-2 {
+    column-count: 2;
+}
+/* .form-check-input.radio-warning[type=radio]:checked:after{
+    border-color: #E4A11B;
+    background-color: #E4A11B;
+}
+.form-check-input.radio-warning:checked {
+    border-color: #E4A11B;
+}
+.form-check-input.radio-focus:checked:focus {
+    border-color: #E4A11B;
+}
+
+.form-check-input:checked:focus:before {
+    box-shadow: 0 0 13px #E4A11B;
+} */
+/* #1266f1 */
