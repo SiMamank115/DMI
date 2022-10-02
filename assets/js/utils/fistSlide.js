@@ -12,7 +12,7 @@ export function firstSlide(slideIndex = 1) {
             document.querySelector(".loading-bar").ariaValueNow = "100";
             document.querySelector(".loading-bar").style.width = "100%";
             setTimeout(() => {
-                changeSlide(window.slides[slideIndex]);
+                changeSlide(window.slides[slideIndex],slideIndex);
             }, 600);
         }
     };

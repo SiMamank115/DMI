@@ -1,3 +1,6 @@
+if(window.localStorage.onExam != undefined && window.localStorage.onExam) {
+    document.querySelector(".link-to-soal").click()
+}
 import { firstSlide } from "./utils/fistSlide.js";
 import { changeSlide } from "./utils/changeSlide.js";
 import { changeTextBoxMenu } from "./utils/changeTextBoxMenu.js";
@@ -27,6 +30,6 @@ window.changeSlide = changeSlide();
 window.textBoxMenuOnDisplay = 0;
 
 slideInit();
-firstSlide(14);
+firstSlide(window.localStorage.lastSlide != "undefined"?window.localStorage.lastSlide:1);
 changeSlide();
 changeTextBoxMenu();

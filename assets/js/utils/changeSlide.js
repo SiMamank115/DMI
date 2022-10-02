@@ -1,11 +1,10 @@
-
 export function changeSlide() {
-    let changeSlide = (Slide) => {
+    let changeSlide = (Slide,index) => {
+        window.localStorage.lastSlide = index;
         let duration = 0.5;
         if (onChangeSlide) return;
         let currentSlide = slideOnScreen ? slideOnScreen : slides[0];
-        document.querySelector(".loading-text").textContent =
-            loadingText[Math.floor(Math.random() * loadingText.length)];
+        document.querySelector(".loading-text").textContent = loadingText[Math.floor(Math.random() * loadingText.length)];
         onChangeSlide = true;
         let target = document.querySelector(".slider-dmi"),
             targetText = document.querySelector(".loading-text");
@@ -61,5 +60,5 @@ export function changeSlide() {
             },
         });
     };
-    return changeSlide
+    return changeSlide;
 }
